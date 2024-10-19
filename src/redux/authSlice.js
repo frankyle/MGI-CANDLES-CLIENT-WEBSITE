@@ -45,7 +45,8 @@ export const loginUser = createAsyncThunk('auth/loginUser', async ({ email, pass
 // Thunk for registering a new user
 export const registerUser = createAsyncThunk('auth/registerUser', async ({ email, username, password, password2 }, thunkAPI) => {
   try {
-    const response = await axios.post(`${baseURL}/register/`, { email, username, password, password2 });
+    const response = await axios.post(`${baseURL}register/`, { email, username, password, password2 });
+    
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response?.data || 'Something went wrong');
