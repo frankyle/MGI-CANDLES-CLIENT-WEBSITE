@@ -1,17 +1,19 @@
-import React from "react"
-import Header from "../common/header/Header"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Home from "../home/Home"
-import Footer from "../common/footer/Footer"
-import About from "../about/About"
-import Pricing from "../pricing/Pricing"
-import Blog from "../blog/Blog"
-import Services from "../services/Services"
-import Signals from "../signals/Signals"
-import Contact from "../contact/Contact"
-import OnePairDetails from "../blog/OnePairDetails"
-import Register from "../auth/Register"
-import Login from "../auth/Login"
+import React from "react";
+import Header from "../common/header/Header";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "../home/Home";
+import Footer from "../common/footer/Footer";
+import About from "../about/About";
+import Pricing from "../pricing/Pricing";
+import Blog from "../blog/Blog";
+import Services from "../services/Services";
+import Signals from "../signals/Signals";
+import Contact from "../contact/Contact";
+import OnePairDetails from "../blog/OnePairDetails";
+import Register from "../auth/Register";
+import Login from "../auth/Login";
+import HealthCheck from "../health/HealthCheck";
+
 
 const Pages = () => {
   return (
@@ -29,11 +31,12 @@ const Pages = () => {
           <Route path="/candles/:id" component={OnePairDetails} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/health-check" component={HealthCheck} /> {/* Add HealthCheck Route */}
         </Switch>
         <Footer />
       </Router>
     </>
-  )
-}
+  );
+};
 
-export default Pages
+export default Pages;
