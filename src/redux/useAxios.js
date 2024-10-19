@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { jwtDecode } from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode'; // Kept the destructured import as requested
 import dayjs from 'dayjs';
 import { useSelector, useDispatch } from 'react-redux';
 import { refreshToken, logout } from './authSlice';
