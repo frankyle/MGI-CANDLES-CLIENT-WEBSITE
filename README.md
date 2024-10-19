@@ -25,3 +25,6 @@
 
 # Login page
 ![alt text](image-8.png)
+
+# Footer
+![alt text](image-9.png)
