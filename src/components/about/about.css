@@ -1,0 +1,40 @@
+.about {
+  margin-bottom: 80px;
+}
+
+.about .heading {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.about p {
+  font-size: 15px;
+  padding-right: 30px;
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.about .container img {
+  max-width: 50%; /* Ensures the image doesn't exceed the container width */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+  border-radius: 79px; /* Makes the image rounded */
+  margin-left: 90px; /* Adds space between the image and text */
+}
+
+@media screen and (max-width: 768px) {
+  .about .container {
+    flex-direction: column;
+  }
+  
+  .about p {
+    padding: 0;
+  }
+  
+  .about .container img {
+    margin-top: 50px;
+    max-width: 90%; /* Optional: Adjust for smaller screens */
+    margin-left: 0; /* Reset margin-left for smaller screens */
+  }
+}

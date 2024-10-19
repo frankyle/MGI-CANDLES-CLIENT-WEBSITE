@@ -1,0 +1,93 @@
+.hero {
+  background-image: url("../../images/forex4.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+}
+
+.hero .container {
+  padding-top: 15%;
+  
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 60px;
+  background-color: rgba(0, 0, 0, 0.3); /* Make the background less dark */
+  padding: 10px;
+  border-top-left-radius: 8px; 
+  border-top-right-radius: 8px; 
+  
+  
+}
+
+.hero p {
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 20px;
+  background-color: rgba(18, 18, 18, 0.3); /* Less dark background */
+  padding: 10px;
+  border-bottom-left-radius: 8px; 
+  border-bottom-right-radius: 8px; 
+  
+}
+
+form {
+  background-color: #fff;
+  border-radius: 10px; /* Round corners for the form */
+  margin-top: 50px;
+  padding: 20px;
+}
+
+form input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  margin-top: 5px;
+  border-radius: 8px; /* Round corners for inputs */
+}
+
+form span {
+  font-size: 14px;
+  color: grey;
+}
+
+input::placeholder {
+  font-size: 17px;
+  color: black;
+}
+
+form .box {
+  padding: 15px;
+  border-left: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+form .box:nth-child(1) {
+  border-left: none;
+}
+
+form .box {
+  border-radius: 8px; /* Rounded corners for the box */
+}
+
+form h4 {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 800px) {
+  .hero .container {
+    padding-top: 30%;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  form .box {
+    border-left: none;
+  }
+  form input {
+    width: 100%;
+  }
+}

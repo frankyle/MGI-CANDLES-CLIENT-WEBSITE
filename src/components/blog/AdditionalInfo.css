@@ -1,0 +1,35 @@
+.additional-info-container {
+  padding: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four images in a row */
+  gap: 20px; /* Space between the images */
+}
+
+.image-card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card-like shadow */
+  border-radius: 10px; /* Smooth corners */
+  overflow: hidden; /* Ensure the image doesn't overflow */
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.additional-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd; /* Line separating image from description */
+  margin-bottom: 10px;
+}
+
+.image-description {
+  font-size: 16px;
+  color: #555;
+}

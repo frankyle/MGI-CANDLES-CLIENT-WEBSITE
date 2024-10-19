@@ -1,0 +1,112 @@
+header {
+  background-color: #fff;
+  height: 10vh;
+  box-shadow: 0 5px 30px rgb(0 22 84 / 10%);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+
+header img {
+  width: 170px;
+}
+
+header a {
+  margin-left: 30px;
+  transition: 0.5s;
+  font-weight: 500;
+}
+
+header a:hover {
+  color: #27ae60;
+}
+
+header span {
+  width: auto;
+  padding: 0px 6px;
+  background: #ecda36;
+  border-radius: 50px;
+  color: #ffffff;
+  margin-right: 4px;
+  font-weight: 400;
+}
+
+header h4 {
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+header .toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0;
+  }
+
+  header img {
+    margin-top: 30px;
+  }
+
+  header .button {
+    display: none;
+  }
+
+  header .nav .flex {
+    display: none;
+  }
+
+  header .toggle {
+    display: block;
+    margin-top: 20px;
+  }
+
+  header .small {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: #27ae60;
+    padding: 20px;
+  }
+
+  header li a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+}
+
+header .userbuttons {
+  display: flex;
+  gap: 10px; /* Adjust gap between buttons */
+}
+
+.userbuttons .btn2,
+.userbuttons .btn5 {
+  padding: 10px 30px; /* Adjust padding to reduce size */
+  font-size: 20px; /* Adjust font size if needed */
+  border: none; /* Remove border */
+  border-radius: 20px; /* Add some rounding */
+  background-color: #27ae60; /* Match background color */
+  color: #ffffff; /* Text color */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.5s; /* Smooth background color transition */
+}
+
+.userbuttons .btn2:hover,
+.userbuttons .btn5:hover {
+  background-color: #219150; /* Darker shade on hover */
+}
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn {
+  margin-left: 10px;  /* Adjust this margin for spacing between name and button */
+}

@@ -1,0 +1,19 @@
+.additional-info-container {
+  margin-top: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust based on how many columns you want */
+  gap: 20px;
+}
+
+.image-item {
+  text-align: center;
+}
+
+.additional-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

@@ -1,0 +1,100 @@
+/* General Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif; /* A popular modern font */
+}
+
+.title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.intro {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+/* Section Heading Styling */
+.section-heading {
+  font-size: 2.2rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #444;
+}
+
+/* Image Styling */
+.image-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.candle-image {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Entry Reasons List */
+.entry-reasons {
+  list-style: none;
+  padding: 0;
+}
+
+.entry-reasons li {
+  background-color: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.entry-reasons li:hover {
+  background-color: #e8e8e8;
+}
+
+/* Weekly Trade Analysis Section */
+.image-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.image-item {
+  width: 23%;
+  text-align: center;
+}
+
+.day-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.day-text {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  color: #777;
+}
+
+/* Text Styling */
+.text {
+  font-size: 1.1rem;
+  margin: 20px 0;
+  line-height: 1.6;
+  color: #555;
+}
