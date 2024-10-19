@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { useSelector, useDispatch } from 'react-redux';
 import { refreshToken, logout } from './authSlice';
 
-const baseURL = "https://django-backend-f0597d367dd6.herokuapp.com/api/";
+const baseURL = "https://django-backend-4b31f4dd2c54.herokuapp.com/api/";
 
 const useAxios = () => {
   const { authTokens } = useSelector((state) => state.auth); // Access auth state
