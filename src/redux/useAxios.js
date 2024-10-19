@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { jwtDecode } from 'jwt-decode'; // Kept the destructured import as requested
+import {jwtDecode} from 'jwt-decode'; // Corrected import
 import dayjs from 'dayjs';
 import { useSelector, useDispatch } from 'react-redux';
 import { refreshToken, logout } from './authSlice';
@@ -7,7 +7,7 @@ import { refreshToken, logout } from './authSlice';
 const baseURL = "https://django-backend-f0597d367dd6.herokuapp.com/api/";
 
 const useAxios = () => {
-  const { authTokens } = useSelector((state) => state.auth);
+  const { authTokens } = useSelector((state) => state.auth); // Access auth state
   const dispatch = useDispatch();
 
   // Create an Axios instance
@@ -15,41 +15,40 @@ const useAxios = () => {
     return axios.create({
       baseURL,
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${accessToken}`, // Attach access token to headers
       },
     });
   };
 
-  // Function to check and refresh token if it's expired
+  // Check if the token is expired and refresh if necessary
   const checkAndRefreshToken = async (req) => {
-    if (!authTokens?.access) return req; // Early exit if no access token
+    if (!authTokens?.access) return req; // If no token, proceed as is
 
     const user = jwtDecode(authTokens.access);
-    const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
+    const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1; // Check token expiration
 
-    if (!isExpired) return req; // Token is still valid
+    if (!isExpired) return req; // If not expired, continue the request as normal
 
     try {
-      // Attempt to refresh the token
+      // Refresh the token using the refreshToken thunk
       const { payload: newTokens } = await dispatch(refreshToken()).unwrap();
-      req.headers.Authorization = `Bearer ${newTokens.access}`;
+      req.headers.Authorization = `Bearer ${newTokens.access}`; // Attach the new access token
       return req;
     } catch (error) {
       console.error('Token refresh failed:', error);
-      dispatch(logout()); // Logout user if refresh fails
+      dispatch(logout()); // Logout if the token refresh fails
+      return Promise.reject(error); // Reject the request if the refresh fails
     }
-
-    return req;
   };
 
   const axiosInstance = createAxiosInstance(authTokens?.access);
 
-  // Axios request interceptor to refresh token when needed
+  // Axios interceptor to check and refresh token before every request
   axiosInstance.interceptors.request.use(async (req) => {
-    return await checkAndRefreshToken(req);
+    return await checkAndRefreshToken(req); // Attach refreshed token if necessary
   });
 
-  return axiosInstance;
+  return axiosInstance; // Return the customized Axios instance
 };
 
 export default useAxios;
