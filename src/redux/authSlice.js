@@ -37,21 +37,28 @@ export const loginUser = createAsyncThunk('auth/loginUser', async ({ email, pass
     localStorage.setItem('authTokens', JSON.stringify(data)); // Save tokens to local storage
     return data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.response?.data || 'Login failed');
+    console.error("Login Error:", error); // Logs full error object
+    const errorMsg = error.response?.data || error.message || 'Login failed';
+    return thunkAPI.rejectWithValue(errorMsg);
   }
 });
+
 
 
 // Thunk for registering a new user
 export const registerUser = createAsyncThunk('auth/registerUser', async ({ email, username, password, password2 }, thunkAPI) => {
   try {
     const response = await axios.post(`${baseURL}register/`, { email, username, password, password2 });
-    
     return response.data;
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.response?.data || 'Something went wrong');
+    console.error("Registration Error:", error); // Logs full error object
+    // Capture error details (status, message) if available
+    const errorMsg = error.response?.data || error.message || 'Something went wrong';
+    return thunkAPI.rejectWithValue(errorMsg);
   }
 });
+
+
 
 // Thunk for refreshing the token
 export const refreshToken = createAsyncThunk('auth/refreshToken', async (_, thunkAPI) => {
