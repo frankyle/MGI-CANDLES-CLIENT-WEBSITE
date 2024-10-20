@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import useAxios from '../../redux/useAxios';
+
 
 const HealthCheck = () => {
   const [status, setStatus] = useState('');
   const [message, setMessage] = useState('');
+  
+  const api = useAxios();
 
   useEffect(() => {
-    axios.get('https://django-backend-f0597d367dd6.herokuapp.com/api/health-check/')
+    api.get('/health-check/')
       .then(response => {
         setStatus(response.data.status);
         setMessage(response.data.message);
       })
       .catch(error => {
-        setStatus('Error');
+        setStatus('Error'); 
         setMessage('Unable to reach backend.');
         console.error(error);
       });
