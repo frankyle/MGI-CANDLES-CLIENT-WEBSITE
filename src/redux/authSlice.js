@@ -3,7 +3,7 @@ import axios from 'axios';
 import {jwtDecode} from 'jwt-decode'; // Corrected to default import
 import dayjs from 'dayjs';
 
-const baseURL = "https://django-backend-4b31f4dd2c54.herokuapp.com/api/";
+const baseURL = "https://django-backend-4feae45a7e65.herokuapp.com/api/";
 
 // Function to get auth tokens from localStorage
 const getAuthTokens = () => {
